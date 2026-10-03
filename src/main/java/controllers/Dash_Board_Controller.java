@@ -43,7 +43,7 @@ public class Dash_Board_Controller {
     void btnAddMembersOnAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/adding/add_members_page.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/manage_members_page.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -65,8 +65,7 @@ public class Dash_Board_Controller {
     void btnIssueBooksOnAction(ActionEvent event) {
         Stage stage = new Stage();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/issue_booK_page.fxml" +
-                    ""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/issue_booK_page.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

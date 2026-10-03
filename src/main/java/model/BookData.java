@@ -1,16 +1,18 @@
 package model;
 
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 public class BookData {
 
-    private static ArrayList<AddBooks> books = new ArrayList<>();
+    private static ObservableList<AddBooks> bookList = FXCollections.observableArrayList();
 
     public static void addBook(AddBooks book) {
-        books.add(book);
+        bookList.add(book);
     }
 
-    public static ArrayList<AddBooks> getBooks(){
-        return books;
+    public static ObservableList<AddBooks> getBookList(){
+        return bookList;
     }
 }

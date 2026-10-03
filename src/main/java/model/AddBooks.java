@@ -16,4 +16,33 @@ public class AddBooks {
         this.year = year;
         this.quantity = quantity;
     }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public String toString() {
+        return isbn +" - "+bookName;
+    }
 }

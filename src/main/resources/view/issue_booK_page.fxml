@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.Issue_BookPage_Controller"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="447.0" prefWidth="694.0" style="-fx-background-color: #FFF6DC;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Issue_BookPage_Controller">
+   <children>
+      <Label layoutX="26.0" layoutY="26.0" text="Issue Book" textFill="#353e79">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="124.0" prefHeight="27.0" prefWidth="106.0" text="Select Member" textFill="#171f56">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="124.0" prefHeight="27.0" prefWidth="106.0" text="Select Book" textFill="#141753">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="230.0" prefHeight="27.0" prefWidth="113.0" text="Issue Date" textFill="#12225e">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="228.0" prefHeight="27.0" prefWidth="122.0" text="Due Date" textFill="#141656">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dpIssueDate" layoutX="48.0" layoutY="266.0" prefHeight="26.0" prefWidth="254.0" />
+      <DatePicker fx:id="dpDueDate" layoutX="369.0" layoutY="264.0" prefHeight="27.0" prefWidth="262.0" />
+      <AnchorPane layoutX="48.0" layoutY="353.0" prefHeight="37.0" prefWidth="234.0" style="-fx-background-color: #006199;">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="36.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/dashboard-img/borrowbooks.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnIssueBook" layoutX="62.0" layoutY="5.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="27.0" prefWidth="122.0" style="-fx-background-color: #006199;" text="Issue Book" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="cmbSelectMember" layoutX="48.0" layoutY="158.0" onAction="#cmbSelectMemberOnAction" prefHeight="26.0" prefWidth="254.0" />
+      <ComboBox fx:id="cmbSelectBook" layoutX="365.0" layoutY="158.0" onAction="#cmbSelectBookOnAction" prefHeight="26.0" prefWidth="254.0" />
+   </children>
 </AnchorPane>

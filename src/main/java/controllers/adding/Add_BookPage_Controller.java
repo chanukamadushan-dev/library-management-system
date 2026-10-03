@@ -4,12 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.AddBooks;
 import model.BookData;
 
 public class Add_BookPage_Controller {
+
 
     @FXML
     private Button btnBookAdd;
@@ -21,22 +24,25 @@ public class Add_BookPage_Controller {
     private Button btnClear;
 
     @FXML
-    private TableColumn<?, ?> clmAuthor;
+    public TableView <AddBooks> tblBookDetails;
 
     @FXML
-    private TableColumn<?, ?> clmBookId;
+    private TableColumn<AddBooks, String> clmAuthor;
 
     @FXML
-    private TableColumn<?, ?> clmBookName;
+    private TableColumn<AddBooks, String> clmBookId;
 
     @FXML
-    private TableColumn<?, ?> clmCategory;
+    private TableColumn<AddBooks, String> clmBookName;
 
     @FXML
-    private TableColumn<?, ?> clmQuantoty;
+    private TableColumn<AddBooks, String> clmCategory;
 
     @FXML
-    private TableColumn<?, ?> clmYear;
+    private TableColumn<AddBooks, String> clmQuantoty;
+
+    @FXML
+    private TableColumn<AddBooks, String> clmYear;
 
     @FXML
     private TextField txtAuthor;
@@ -55,6 +61,18 @@ public class Add_BookPage_Controller {
 
     @FXML
     private TextField txtYear;
+
+    @FXML
+    public void initialize(){
+        clmBookId.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+        clmBookName.setCellValueFactory(new PropertyValueFactory<>("bookName"));
+        clmAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
+        clmCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        clmYear.setCellValueFactory(new PropertyValueFactory<>("year"));
+        clmQuantoty.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        tblBookDetails.setItems(BookData.getBookList());
+    }
 
     @FXML
     void txtAuthorOnAction(ActionEvent event) {

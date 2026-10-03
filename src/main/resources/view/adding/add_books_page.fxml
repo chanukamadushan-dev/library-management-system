@@ -66,7 +66,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="420.0" layoutY="129.0" prefHeight="274.0" prefWidth="680.0">
+      <TableView fx:id="tblBookDetails" layoutX="420.0" layoutY="129.0" prefHeight="274.0" prefWidth="680.0">
         <columns>
           <TableColumn fx:id="clmBookId" prefWidth="64.0" text="Book ID" />
           <TableColumn fx:id="clmBookName" prefWidth="156.800048828125" text="Book Name" />
