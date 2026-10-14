@@ -75,7 +75,7 @@ public class Add_BookPage_Controller {
         clmYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         clmQuantoty.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
-        tblBookDetails.setItems(BookData.getBookList());
+        tblBookDetails.setItems(bookController.getAllBooks());
     }
 
     @FXML
@@ -135,6 +135,7 @@ public class Add_BookPage_Controller {
                 publishedYEar,
                 qty
         );
+        tblBookDetails.setItems(bookController.getAllBooks());
         System.out.println(bookController);
 
     }

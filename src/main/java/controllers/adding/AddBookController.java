@@ -1,10 +1,14 @@
 package controllers.adding;
 
 import db.DBConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import model.AddBooks;
 
 import java.sql.Connection;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AddBookController {
@@ -41,6 +45,35 @@ public class AddBookController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ObservableList<AddBooks> getAllBooks(){
+        ObservableList<AddBooks> bookList = FXCollections.observableArrayList();
+
+        String SQL = "SELECT ISBN, book_title, author, category, publish_year, quantity FROM books ";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                AddBooks book = new AddBooks(
+                        resultSet.getString("ISBN"),
+                        resultSet.getString("book_title"),
+                        resultSet.getString("author"),
+                        resultSet.getString("category"),
+                        resultSet.getString("publish_year"),
+                        resultSet.getString("quantity")
+
+                );
+                bookList.add(book);
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return bookList;
     }
 
     public static AddBookController getInstance(){
