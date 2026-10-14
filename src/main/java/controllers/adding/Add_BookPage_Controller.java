@@ -11,8 +11,11 @@ import javafx.stage.Stage;
 import model.AddBooks;
 import model.BookData;
 
+import java.util.Locale;
+
 public class Add_BookPage_Controller {
 
+    AddBookController bookController = new AddBookController();
 
     @FXML
     private Button btnBookAdd;
@@ -106,7 +109,7 @@ public class Add_BookPage_Controller {
 
     @FXML
     void btnBookAdOnAction(ActionEvent event) {
-        AddBooks book = new AddBooks(
+        /*AddBooks book = new AddBooks(
                 txtBookID.getText(),
                 txtBookName.getText(),
                 txtAuthor.getText(),
@@ -115,7 +118,24 @@ public class Add_BookPage_Controller {
                 txtQuantity.getText()
         );
 
-        BookData.addBook(book);
+        BookData.addBook(book);*/
+
+        String year = txtYear.getText();
+        int publishedYEar = Integer.parseInt(year);
+
+        String quantity = txtQuantity.getText();
+        int qty = Integer.parseInt(quantity);
+
+        bookController.addBook(
+                txtBookID.getText(),
+                txtBookName.getText(),
+                txtAuthor.getText(),
+                txtCategory.getText(),
+                publishedYEar,
+                qty
+        );
+        System.out.println(bookController);
+
     }
 
     @FXML
