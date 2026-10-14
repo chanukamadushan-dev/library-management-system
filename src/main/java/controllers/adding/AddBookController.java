@@ -9,6 +9,10 @@ import java.sql.SQLException;
 
 public class AddBookController {
 
+    private static AddBookController instance;
+
+    private AddBookController(){}
+
     Connection connection = DBConnection.getInstance().getConnection();
 
     public void addBook(
@@ -39,5 +43,11 @@ public class AddBookController {
         }
     }
 
+    public static AddBookController getInstance(){
+        if(instance == null){
+            instance = new AddBookController();
+        }
+        return instance;
+    }
 
 }

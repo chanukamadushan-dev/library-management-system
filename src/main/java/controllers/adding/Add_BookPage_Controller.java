@@ -1,5 +1,6 @@
 package controllers.adding;
 
+import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,7 +16,7 @@ import java.util.Locale;
 
 public class Add_BookPage_Controller {
 
-    AddBookController bookController = new AddBookController();
+    AddBookController bookController = AddBookController.getInstance();
 
     @FXML
     private Button btnBookAdd;
