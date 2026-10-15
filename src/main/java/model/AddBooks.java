@@ -8,6 +8,7 @@ public class AddBooks {
     private String year;
     private String quantity;
 
+
     public AddBooks(String isbn, String bookName, String author, String category, String year, String quantity) {
         this.isbn = isbn;
         this.bookName = bookName;
@@ -16,6 +17,7 @@ public class AddBooks {
         this.year = year;
         this.quantity = quantity;
     }
+
 
     public String getIsbn() {
         return isbn;

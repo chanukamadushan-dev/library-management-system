@@ -10,15 +10,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.ManageMembers;
 import model.MemberData;
 
-public class Manage_MemberPaage_Controller {
+public class Manage_MemberPage_Controller {
 
-    public Button btnMemberRegister;
+    Manage_Member_Controller memberController = Manage_Member_Controller.getInstance();
+
+
     private ManageMembers selectedMember;
     @FXML
     private Button btnDeleteMember;
 
     @FXML
-    private Button btnMemberAdd;
+    public Button btnMemberRegister;
 
     @FXML
     private Button btnSearchMember;
@@ -70,7 +72,7 @@ public class Manage_MemberPaage_Controller {
         colmPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("memberPhone"));
         colmAddress.setCellValueFactory(new PropertyValueFactory<>("memberAddress"));
 
-        tblMemberDetails.setItems(MemberData.getMemberList());
+        tblMemberDetails.setItems(memberController.getAllMembers());
     }
 
     @FXML
@@ -123,26 +125,33 @@ public class Manage_MemberPaage_Controller {
 
     @FXML
     void btnSearchMemberOnAction(ActionEvent event) {
-        selectedMember = MemberData.searchMember(txtSearchMember.getText());
-        if (selectedMember != null) {
-            txtMemberID.setText(selectedMember.getMemberId());
-            txtMemberName.setText(selectedMember.getMemberName());
-            txtMemberMail.setText(selectedMember.getMemberEmail());
-            txtMemberPhone.setText(selectedMember.getMemberPhone());
-            txtMemberAddress.setText(selectedMember.getMemberAddress());
+        if (!(txtSearchMember.getText().isEmpty())) {
+            selectedMember = memberController.searchMember(txtSearchMember.getText());
+
+            if (selectedMember != null) {
+                txtMemberID.setText(selectedMember.getMemberId());
+                txtMemberName.setText(selectedMember.getMemberName());
+                txtMemberMail.setText(selectedMember.getMemberEmail());
+                txtMemberPhone.setText(selectedMember.getMemberPhone());
+                txtMemberAddress.setText(selectedMember.getMemberAddress());
+            }
         }
     }
 
     @FXML
     void btnUpdateMemberOnAction(ActionEvent event) {
-        if (selectedMember != null) {
-            selectedMember.setMemberName(txtMemberName.getText());
-            selectedMember.setMemberEmail(txtMemberMail.getText());
-            selectedMember.setMemberAddress(txtMemberAddress.getText());
-            selectedMember.setMemberPhone(txtMemberPhone.getText());
 
-            tblMemberDetails.refresh();
-        }
+        memberController.updateMember(
+                txtMemberID.getText(),
+                txtMemberName.getText(),
+                txtMemberMail.getText(),
+                txtMemberPhone.getText(),
+                txtMemberAddress.getText()
+        );
+
+        tblMemberDetails.setItems(memberController.getAllMembers());
+        tblMemberDetails.refresh();
+
     }
 
     public void btnClearFieldsOnAction(ActionEvent actionEvent) {
@@ -150,14 +159,14 @@ public class Manage_MemberPaage_Controller {
     }
 
     public void btnMemberRegisterOnAction(ActionEvent actionEvent) {
-        ManageMembers member = new ManageMembers(
+        memberController.addMember(
                 txtMemberID.getText(),
                 txtMemberName.getText(),
                 txtMemberMail.getText(),
                 txtMemberPhone.getText(),
                 txtMemberAddress.getText()
         );
-        MemberData.addMembers(member);
+        tblMemberDetails.setItems(memberController.getAllMembers());
         clearField();
     }
 }
