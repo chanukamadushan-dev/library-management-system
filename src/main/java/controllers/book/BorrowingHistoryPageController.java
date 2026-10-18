@@ -1,4 +1,4 @@
-package controllers;
+package controllers.book;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

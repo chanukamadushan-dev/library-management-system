@@ -1,4 +1,4 @@
-package controllers.adding;
+package controllers.book;
 
 import db.DBConnection;
 import javafx.collections.FXCollections;

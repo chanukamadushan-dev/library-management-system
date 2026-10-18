@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1303.0" stylesheets="@../css/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1303.0" stylesheets="@../css/main_dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
    <children>
       <VBox prefHeight="764.0" prefWidth="206.0" styleClass="sidebar">
          <children>
@@ -80,7 +80,7 @@
                      </image>
                   </ImageView>
                   <Line endX="115.40000915527344" layoutX="91.0" layoutY="516.0" startX="-91.00001525878906" />
-                  <Button layoutX="18.0" layoutY="566.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="160.0" styleClass="logout-button" text="Log out" textFill="WHITE">
+                  <Button fx:id="btnLogOut" layoutX="18.0" layoutY="566.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="52.0" prefWidth="160.0" styleClass="logout-button" text="Log out" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -309,10 +309,10 @@
                         </VBox>
                         <TableView fx:id="tblDashboard" prefHeight="380.0" prefWidth="449.0" styleClass="dashboard-table">
                           <columns>
-                            <TableColumn prefWidth="161.60001182556152" text="            Book Name" />
-                            <TableColumn prefWidth="216.80001831054688" text="             Customer Name" />
-                              <TableColumn prefWidth="191.99996948242188" text="           Borrowed Date" />
-                              <TableColumn prefWidth="165.5999755859375" text="           Due Date" />
+                            <TableColumn fx:id="colmBookName" prefWidth="161.60001182556152" text="            Book Name" />
+                            <TableColumn fx:id="colmCustomerName" prefWidth="216.80001831054688" text="             Customer Name" />
+                              <TableColumn fx:id="colmBorrowDt" prefWidth="191.99996948242188" text="           Borrowed Date" />
+                              <TableColumn fx:id="colmDueDt" prefWidth="165.5999755859375" text="           Due Date" />
                           </columns>
                         </TableView>
                      </children>

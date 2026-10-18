@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="574.0" prefWidth="1114.0" style="-fx-background-color: #e9edc9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.adding.AddBookPageController">
+<AnchorPane prefHeight="574.0" prefWidth="1114.0" style="-fx-background-color: #e9edc9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.book.AddBookPageController">
    <children>
       <Label layoutX="134.0" layoutY="35.0" text="Add a Book">
          <font>
