@@ -1,0 +1,557 @@
+
+/* =========================================
+   LIBRARY MANAGEMENT SYSTEM
+   DASHBOARD CSS
+   ========================================= */
+
+
+/* =========================================
+   1. ROOT AND MAIN CONTENT
+   ========================================= */
+
+.dashboard-root {
+    -fx-background-color: #F4F7FA;
+    -fx-font-family: "Segoe UI";
+}
+
+.dashboard-content {
+    -fx-background-color: #F4F7FA;
+}
+
+.dashboard-content > .viewport {
+    -fx-background-color: #F4F7FA;
+}
+
+
+/* =========================================
+   2. SIDEBAR
+   ========================================= */
+
+/* =========================================
+   2. SIDEBAR - ROUNDED MODERN DESIGN
+   ========================================= */
+
+.sidebar {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #102A43,
+            #164E63,
+            #176B70
+    );
+
+    /* Rounded corners */
+    -fx-background-radius: 22;
+
+    /* Space inside sidebar */
+    -fx-padding: 6 2 6 2;
+    -fx-spacing: 14;
+
+    /* Soft shadow around sidebar */
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(16, 42, 67, 0.22),
+            18, 0.15, 3, 4
+    );
+}
+
+/* Sidebar menu background */
+.sidebar-menu {
+    -fx-background-color: transparent;
+}
+
+/* Sidebar navigation labels */
+.sidebar-label {
+    -fx-text-fill: #D8E7ED;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-padding: 12 8 12 18;
+    -fx-cursor: hand;
+}
+
+/* Hover effect */
+.sidebar-label:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Selected sidebar item */
+.sidebar-label.active {
+    -fx-background-color: #20A4B8;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 10;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(32, 164, 184, 0.40),
+            10, 0.20, 0, 2
+    );
+}
+
+/* Sidebar icons */
+.sidebar-icon {
+    -fx-opacity: 0.95;
+}
+
+
+/* =========================================
+   3. LOGOUT BUTTON
+   ========================================= */
+
+.logout-button {
+    -fx-background-color: #E84C4F;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: #FF5D60;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(255, 80, 80, 0.60),
+            16, 0.35, 0, 0
+    );
+}
+
+.logout-button:pressed {
+    -fx-background-color: #C9363B;
+}
+
+
+/* =========================================
+   4. TOP HEADER
+   ========================================= */
+
+.dashboard-header {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 18 24 18 24;
+    -fx-border-color:
+            transparent transparent #E7EDF2 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+}
+
+
+/* =========================================
+   5. DASHBOARD SUMMARY CARDS
+   ========================================= */
+
+/* Apply stat-card to each count card's VBox */
+
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16;
+    -fx-border-color: #E5EDF2;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(25, 55, 75, 0.07),
+            14, 0.12, 0, 4
+    );
+}
+
+.stat-card:hover {
+    -fx-border-color: #B5DDE5;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(32, 164, 184, 0.18),
+            18, 0.18, 0, 5
+    );
+}
+
+.stat-title {
+    -fx-text-fill: #536777;
+    -fx-font-size: 17px;
+    -fx-font-weight: normal;
+}
+
+.stat-number {
+    -fx-text-fill: #183B4A;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+.stat-number-danger {
+    -fx-text-fill: #E84C4F;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+
+/* Optional accent bars for summary cards.
+   Use these classes only if needed in your FXML. */
+
+.stat-card-books {
+    -fx-border-color: #24B8D5;
+}
+
+.stat-card-members {
+    -fx-border-color: #3974C6;
+}
+
+.stat-card-borrowed {
+    -fx-border-color: #168C83;
+}
+
+.stat-card-overdue {
+    -fx-border-color: #E84C4F;
+}
+
+
+/* =========================================
+   6. QUICK ACTION BUTTONS - COMMON
+   ========================================= */
+
+.action-panel {
+    -fx-background-color: #F4F7FA;
+    -fx-background-radius: 16;
+    -fx-padding: 16;
+}
+
+.action-button {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 1.2;
+    -fx-cursor: hand;
+    -fx-padding: 10 12 10 44;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.action-button:hover {
+    -fx-translate-y: -1;
+}
+
+.action-button:pressed {
+    -fx-translate-y: 1;
+    -fx-effect: none;
+}
+
+
+/* =========================================
+   7. ADD BOOK - OCEAN BLUE
+   ========================================= */
+
+.add-book-button {
+    -fx-background-color: #247BA0;
+}
+
+.add-book-button:hover {
+    -fx-background-color: #2D8FB8;
+    -fx-border-color: #8AE0FF;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(36, 123, 160, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.add-book-button:pressed {
+    -fx-background-color: #185D7B;
+}
+
+
+/* =========================================
+   8. MANAGE MEMBERS - ROYAL PURPLE
+   ========================================= */
+
+.manage-members-button {
+    -fx-background-color: #7656C9;
+}
+
+.manage-members-button:hover {
+    -fx-background-color: #896CE0;
+    -fx-border-color: #D3BFF6;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(118, 86, 201, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.manage-members-button:pressed {
+    -fx-background-color: #5D40A9;
+}
+
+
+/* =========================================
+   9. ISSUE BOOK - EMERALD TEAL
+   ========================================= */
+
+.issue-book-button {
+    -fx-background-color: #168C83;
+}
+
+.issue-book-button:hover {
+    -fx-background-color: #1AA99D;
+    -fx-border-color: #8DFFF0;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(22, 140, 131, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.issue-book-button:pressed {
+    -fx-background-color: #106A63;
+}
+
+
+/* =========================================
+   10. RETURN BOOK - WARM ORANGE
+   ========================================= */
+
+.return-book-button {
+    -fx-background-color: #D97732;
+}
+
+.return-book-button:hover {
+    -fx-background-color: #ED8A42;
+    -fx-border-color: #FFD0A3;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(217, 119, 50, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.return-book-button:pressed {
+    -fx-background-color: #B75C22;
+}
+
+
+/* =========================================
+   11. BORROW HISTORY - HISTORY BLUE
+   ========================================= */
+
+.borrow-history-button {
+    -fx-background-color: #3974C6;
+}
+
+.borrow-history-button:hover {
+    -fx-background-color: #4D8AE0;
+    -fx-border-color: #B5D5FF;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(57, 116, 198, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.borrow-history-button:pressed {
+    -fx-background-color: #28579A;
+}
+
+
+/* =========================================
+   12. ACTIVE QUICK ACTION
+   ========================================= */
+
+.action-button.active {
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 1.5;
+}
+
+
+/* =========================================
+   13. TABLE VIEW
+   ========================================= */
+
+.dashboard-table {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12;
+    -fx-border-color: #E3EAF0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.dashboard-table .column-header-background {
+    -fx-background-color: #EAF3F6;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.dashboard-table .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 42px;
+    -fx-border-color:
+            transparent transparent #D8E5EB transparent;
+}
+
+.dashboard-table .column-header .label {
+    -fx-text-fill: #174558;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.dashboard-table .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color:
+            transparent transparent #EEF2F5 transparent;
+    -fx-cell-size: 40px;
+}
+
+.dashboard-table .table-row-cell:odd {
+    -fx-background-color: #F9FBFC;
+}
+
+.dashboard-table .table-row-cell:hover {
+    -fx-background-color: #EAF7FA;
+}
+
+.dashboard-table .table-row-cell:selected {
+    -fx-background-color: #D6F0F4;
+}
+
+.dashboard-table .table-cell {
+    -fx-text-fill: #344B5A;
+    -fx-padding: 8;
+    -fx-border-color: transparent;
+}
+
+.dashboard-table .placeholder .label {
+    -fx-text-fill: #8798A5;
+}
+
+
+/* =========================================
+   14. SIDEBAR SEPARATOR
+   ========================================= */
+
+.sidebar-separator {
+    -fx-stroke: rgba(255, 255, 255, 0.22);
+    -fx-stroke-width: 1;
+}
+
+
+/* =========================================
+   15. DASHBOARD CONTENT BACKGROUNDS
+   ========================================= */
+
+/* General content area */
+
+.dashboard-body {
+    -fx-background-color: #F4F7FA;
+}
+
+/* White content panel */
+
+.content-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 14;
+    -fx-border-color: #E5EDF2;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+}
+
+/* Light panel behind the table */
+
+.table-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 14;
+    -fx-border-color: #E5EDF2;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+/* Subtle section background */
+
+.section-background {
+    -fx-background-color: #EEF3F6;
+    -fx-background-radius: 12;
+}
+
+
+/* =========================================
+   16. TABS
+   ========================================= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #EAF3F6;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #EAF3F6;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #174558;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #168C83;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0 0 12 12;
+}
+
+
+/* =========================================
+   17. GENERAL LABELS AND INPUTS
+   ========================================= */
+
+.dashboard-root .label {
+    -fx-font-family: "Segoe UI";
+}
+
+.text-field,
+.password-field,
+.combo-box,
+.date-picker {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D7E2E9;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+.text-field:focused,
+.password-field:focused,
+.combo-box:focused,
+.date-picker:focused {
+    -fx-border-color: #247BA0;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.stats-grid {
+    -fx-background-color: #E8EFF5;
+    -fx-background-radius: 16;
+    -fx-padding: 16;
+    -fx-hgap: 16;
+    -fx-vgap: 16;
+}

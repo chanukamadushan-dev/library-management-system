@@ -3,14 +3,12 @@ package controllers;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.SnapshotResult;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import model.Issue;
 import model.IssueData;
-import java.time.LocalDate;
 
-public class Borrowing_HistoryPage_Controller {
+public class BorrowingHistoryPageController {
 
     @FXML
     private TableColumn<Issue, String> colmBookTitle;

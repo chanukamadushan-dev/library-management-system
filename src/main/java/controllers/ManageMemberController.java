@@ -2,20 +2,18 @@ package controllers;
 
 import db.DBConnection;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
-import model.ManageMembers;
+import model.Members;
 
-import java.awt.event.WindowStateListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Manage_Member_Controller {
-    private static Manage_Member_Controller instance;
+public class ManageMemberController {
+    private static ManageMemberController instance;
 
-    private Manage_Member_Controller() {
+    private ManageMemberController() {
     }
 
     Connection connection = DBConnection.getInstance().getConnection();
@@ -29,7 +27,7 @@ public class Manage_Member_Controller {
             String address
     ) {
 
-        String SQL = "INSERT INTO patrons VALUES " +
+        String SQL = "INSERT INTO patrons(member_id, full_name, email, contact, adress) VALUES " +
                 "(?, ?, ?, ?, ?)";
 
         try {
@@ -47,9 +45,9 @@ public class Manage_Member_Controller {
         }
     }
 
-    public ObservableList<ManageMembers> getAllMembers() {
+    public ObservableList<Members> getAllMembers() {
 
-        ObservableList<ManageMembers> memberList = FXCollections.observableArrayList();
+        ObservableList<Members> memberList = FXCollections.observableArrayList();
 
         String SQL = "SELECT member_id, full_name, email, contact, adress FROM patrons";
         try {
@@ -58,7 +56,7 @@ public class Manage_Member_Controller {
 
             while (resultSet.next()) {
 
-                ManageMembers member = new ManageMembers(
+                Members member = new Members(
                         resultSet.getString("member_id"),
                         resultSet.getString("full_name"),
                         resultSet.getString("email"),
@@ -76,7 +74,7 @@ public class Manage_Member_Controller {
         return memberList;
     }
 
-    public ManageMembers searchMember(String id) {
+    public Members searchMember(String id) {
 
 
         String SQL = "SELECT member_id, full_name, email, contact, adress FROM patrons WHERE member_id = ?";
@@ -88,7 +86,7 @@ public class Manage_Member_Controller {
 
             if (resultSet.next()) {
 
-                return new ManageMembers(
+                return new Members(
                         resultSet.getString("member_id"),
                         resultSet.getString("full_name"),
                         resultSet.getString("email"),
@@ -131,9 +129,22 @@ public class Manage_Member_Controller {
         }
     }
 
-    public static Manage_Member_Controller getInstance() {
+    public void deleteMember(String id){
+
+        String SQL = "DELETE FROM patrons WHERE member_id = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static ManageMemberController getInstance() {
         if (instance == null) {
-            instance = new Manage_Member_Controller();
+            instance = new ManageMemberController();
         }
         return instance;
     }

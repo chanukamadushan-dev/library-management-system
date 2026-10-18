@@ -3,7 +3,7 @@ package controllers.adding;
 import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.AddBooks;
+import model.Books;
 
 import java.sql.Connection;
 
@@ -47,8 +47,8 @@ public class AddBookController {
         }
     }
 
-    public ObservableList<AddBooks> getAllBooks(){
-        ObservableList<AddBooks> bookList = FXCollections.observableArrayList();
+    public ObservableList<Books> getAllBooks(){
+        ObservableList<Books> bookList = FXCollections.observableArrayList();
 
         String SQL = "SELECT ISBN, book_title, author, category, publish_year, quantity FROM books ";
 
@@ -57,7 +57,7 @@ public class AddBookController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                AddBooks book = new AddBooks(
+                Books book = new Books(
                         resultSet.getString("ISBN"),
                         resultSet.getString("book_title"),
                         resultSet.getString("author"),

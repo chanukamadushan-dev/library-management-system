@@ -1,6 +1,6 @@
 package model;
 
-public class AddBooks {
+public class Books {
     private String isbn;
     private String bookName;
     private String author;
@@ -9,7 +9,7 @@ public class AddBooks {
     private String quantity;
 
 
-    public AddBooks(String isbn, String bookName, String author, String category, String year, String quantity) {
+    public Books(String isbn, String bookName, String author, String category, String year, String quantity) {
         this.isbn = isbn;
         this.bookName = bookName;
         this.author = author;
@@ -18,6 +18,10 @@ public class AddBooks {
         this.quantity = quantity;
     }
 
+    public Books(String isbn, String bookName) {
+        this.isbn = isbn;
+        this.bookName = bookName;
+    }
 
     public String getIsbn() {
         return isbn;

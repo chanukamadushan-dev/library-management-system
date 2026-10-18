@@ -6,13 +6,13 @@ import javafx.collections.ObservableList;
 
 public class BookData {
 
-    private static ObservableList<AddBooks> bookList = FXCollections.observableArrayList();
+    private static ObservableList<Books> bookList = FXCollections.observableArrayList();
 
-    public static void addBook(AddBooks book) {
+    public static void addBook(Books book) {
         bookList.add(book);
     }
 
-    public static ObservableList<AddBooks> getBookList(){
+    public static ObservableList<Books> getBookList(){
         return bookList;
     }
 }

@@ -1,18 +1,23 @@
 package model;
 
-public class ManageMembers {
+public class Members {
     private String memberId;
     private String memberName;
     private String memberEmail;
     private String memberPhone;
     private String memberAddress;
 
-    public ManageMembers(String memberId, String memebrName, String memberEmail, String memberPhone, String memberAddress) {
+    public Members(String memberId, String memebrName, String memberEmail, String memberPhone, String memberAddress) {
         this.memberId = memberId;
         this.memberName = memebrName;
         this.memberEmail = memberEmail;
         this.memberPhone = memberPhone;
         this.memberAddress = memberAddress;
+    }
+
+    public Members(String memberId, String memberName) {
+        this.memberId = memberId;
+        this.memberName = memberName;
     }
 
     public String getMemberId() {

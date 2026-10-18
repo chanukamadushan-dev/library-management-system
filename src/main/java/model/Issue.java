@@ -3,8 +3,8 @@ package model;
 import java.time.LocalDate;
 
 public class Issue {
-    private ManageMembers member;
-    private AddBooks book;
+    private Members member;
+    private Books book;
 
     private LocalDate issueDate;
     private LocalDate dueDate;
@@ -19,7 +19,7 @@ public class Issue {
 //        this.dueDate = dueDate;
 //    }
 
-    public Issue(ManageMembers member, AddBooks book, LocalDate issueDate, LocalDate dueDate) {
+    public Issue(Members member, Books book, LocalDate issueDate, LocalDate dueDate) {
         this.member = member;
         this.book = book;
         this.issueDate = issueDate;
@@ -27,11 +27,11 @@ public class Issue {
         this.status = "Borrowed";
     }
 
-    public ManageMembers getMember() {
+    public Members getMember() {
         return member;
     }
 
-    public AddBooks getBook() {
+    public Books getBook() {
         return book;
     }
 
@@ -51,11 +51,11 @@ public class Issue {
         return status;
     }
 
-    public void setMember(ManageMembers member) {
+    public void setMember(Members member) {
         this.member = member;
     }
 
-    public void setBook(AddBooks book) {
+    public void setBook(Books book) {
         this.book = book;
     }
 

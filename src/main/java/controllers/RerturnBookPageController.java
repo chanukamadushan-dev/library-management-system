@@ -10,7 +10,7 @@ import model.IssueData;
 
 import java.time.LocalDate;
 
-public class Rerturn_BookPage_Controller {
+public class RerturnBookPageController {
 
     @FXML
     private Button btnReturn;

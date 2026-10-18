@@ -4,14 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class MemberData {
-    private static ObservableList<ManageMembers> memberList = FXCollections.observableArrayList();
+    private static ObservableList<Members> memberList = FXCollections.observableArrayList();
 
-    public static void addMembers(ManageMembers member) {
+    public static void addMembers(Members member) {
         memberList.add(member);
     }
 
-    public static ManageMembers searchMember(String id) {
-        for (ManageMembers member : memberList) {
+    public static Members searchMember(String id) {
+        for (Members member : memberList) {
             if (member.getMemberId().equals(id)) {
                 return member;
             }
@@ -19,11 +19,11 @@ public class MemberData {
         }
         return null;
     }
-    public static ObservableList<ManageMembers> getMemberList(){
+    public static ObservableList<Members> getMemberList(){
         return memberList;
     }
 
-    public static void deleteMember(ManageMembers member) {
+    public static void deleteMember(Members member) {
         memberList.remove(member);
     }
 }

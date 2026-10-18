@@ -8,9 +8,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.StringReader;
 
-public class Dash_Board_Controller {
+public class DashBoardController {
 
     public Button btnLogOut;
     @FXML

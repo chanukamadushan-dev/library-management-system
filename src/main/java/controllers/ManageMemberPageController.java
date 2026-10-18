@@ -7,15 +7,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.ManageMembers;
-import model.MemberData;
+import model.Members;
 
-public class Manage_MemberPage_Controller {
+public class ManageMemberPageController {
 
-    Manage_Member_Controller memberController = Manage_Member_Controller.getInstance();
+    ManageMemberController memberController = ManageMemberController.getInstance();
 
 
-    private ManageMembers selectedMember;
+    private Members selectedMember;
     @FXML
     private Button btnDeleteMember;
 
@@ -29,22 +28,22 @@ public class Manage_MemberPage_Controller {
     private Button btnUpdateMember;
 
     @FXML
-    private TableColumn<ManageMembers, String> colmAddress;
+    private TableColumn<Members, String> colmAddress;
 
     @FXML
-    private TableColumn<ManageMembers, String> colmEmail;
+    private TableColumn<Members, String> colmEmail;
 
     @FXML
-    private TableColumn<ManageMembers, String> colmMemberId;
+    private TableColumn<Members, String> colmMemberId;
 
     @FXML
-    private TableColumn<ManageMembers, String> colmMemberName;
+    private TableColumn<Members, String> colmMemberName;
 
     @FXML
-    private TableColumn<ManageMembers, String> colmPhoneNumber;
+    private TableColumn<Members, String> colmPhoneNumber;
 
     @FXML
-    private TableView<ManageMembers> tblMemberDetails;
+    private TableView<Members> tblMemberDetails;
 
     @FXML
     private TextField txtMemberAddress;
@@ -116,11 +115,9 @@ public class Manage_MemberPage_Controller {
 
     @FXML
     void btnDeleteMemberOnAction(ActionEvent event) {
-        if (selectedMember != null) {
-            MemberData.deleteMember(selectedMember);
-            clearField();
-
-        }
+        memberController.deleteMember(txtSearchMember.getText());
+        clearField();
+        tblMemberDetails.refresh();
     }
 
     @FXML

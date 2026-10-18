@@ -1,6 +1,5 @@
 package controllers.adding;
 
-import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,12 +8,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.AddBooks;
-import model.BookData;
+import model.Books;
 
-import java.util.Locale;
-
-public class Add_BookPage_Controller {
+public class AddBookPageController {
 
     AddBookController bookController = AddBookController.getInstance();
 
@@ -28,25 +24,25 @@ public class Add_BookPage_Controller {
     private Button btnClear;
 
     @FXML
-    public TableView <AddBooks> tblBookDetails;
+    public TableView <Books> tblBookDetails;
 
     @FXML
-    private TableColumn<AddBooks, String> clmAuthor;
+    private TableColumn<Books, String> clmAuthor;
 
     @FXML
-    private TableColumn<AddBooks, String> clmBookId;
+    private TableColumn<Books, String> clmBookId;
 
     @FXML
-    private TableColumn<AddBooks, String> clmBookName;
+    private TableColumn<Books, String> clmBookName;
 
     @FXML
-    private TableColumn<AddBooks, String> clmCategory;
+    private TableColumn<Books, String> clmCategory;
 
     @FXML
-    private TableColumn<AddBooks, String> clmQuantoty;
+    private TableColumn<Books, String> clmQuantoty;
 
     @FXML
-    private TableColumn<AddBooks, String> clmYear;
+    private TableColumn<Books, String> clmYear;
 
     @FXML
     private TextField txtAuthor;
