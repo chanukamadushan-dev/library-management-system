@@ -6,10 +6,10 @@ import javafx.collections.ObservableList;
 import model.Books;
 import model.Members;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+//import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class IssueBookController {
 
@@ -65,5 +65,30 @@ public class IssueBookController {
         }
 
         return bookList;
+    }
+
+    public void IssueBook(
+
+            String bookId,
+            String memberId,
+            LocalDate borrowDate,
+            LocalDate dueDate
+
+    ){
+        String SQL = "INSERT INTO borrwings(book_id, member_id, borrow_date, due_date) " +
+                     "VALUES (?, ?, ?, ?)";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1,bookId);
+            preparedStatement.setString(2,memberId);
+            preparedStatement.setDate(3, Date.valueOf(borrowDate));
+            preparedStatement.setDate(4, Date.valueOf(dueDate));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

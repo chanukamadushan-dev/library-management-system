@@ -58,6 +58,8 @@ public class MainDashboardController {
     @FXML
     private TableView<?> tblDashboard;
 
+
+
     @FXML
     void btnAddBookOnAction(ActionEvent event) {
 
@@ -67,26 +69,31 @@ public class MainDashboardController {
     @FXML
     void btnBorrowHistoryOnAction(ActionEvent event) {
 
+        SceneManager.switchPgae("/view/borrowing_history_page.fxml");
     }
 
     @FXML
     void btnIssueBookOnAction(ActionEvent event) {
 
+        SceneManager.switchPgae("/view/issue_booK_page.fxml");
     }
 
     @FXML
     void btnLogOutOnAction(ActionEvent event) {
 
+        SceneManager.switchPgae("/view/login/login_page.fxml");
     }
 
     @FXML
     void btnManageMembersOnAction(ActionEvent event) {
 
+        SceneManager.switchPgae("/view/manage_members_page.fxml");
     }
 
     @FXML
     void btnReturnBookOnAction(ActionEvent event) {
 
+        SceneManager.switchPgae("/view/return_book_page.fxml");
     }
 
     @FXML

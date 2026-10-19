@@ -9,10 +9,12 @@ import javafx.scene.control.DatePicker;
 import model.*;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class IssueBookPageController implements Initializable {
 
+    IssueBookController controller = new IssueBookController();
 
     @FXML
     private Button btnIssueBook;
@@ -48,11 +50,28 @@ public class IssueBookPageController implements Initializable {
     @FXML
     void btnIssueBookOnAction(ActionEvent event) {
 
+        Books selectedBook = cmbSelectBook.getValue();
+        Members selectedMember = cmbSelectMember.getValue();
+
+        LocalDate borrowDate = dpIssueDate.getValue();
+        LocalDate dueDate = dpDueDate.getValue();
+
+        String bookId = selectedBook.getIsbn();
+        String memberId = selectedMember.getMemberId();
+
+        controller.IssueBook(
+                bookId,
+                memberId,
+                borrowDate,
+                dueDate
+        );
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        cmbSelectBook.setItems(controller.getBookIdName());
+        cmbSelectMember.setItems(controller.getMembeIdAndName());
     }
 }
