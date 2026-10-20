@@ -14,7 +14,15 @@ public class BorrowHistoryController {
     public ObservableList<Issue> getData(){
 
         ObservableList<Issue> borrowList = FXCollections.observableArrayList();
-        String SQL = "select  p.member_id, b.book_title, bw.borrow_date, bw.due_date, bw.return_date\n" +
+        String SQL = "select  p.member_id, b.book_title, bw.borrow_date, bw.due_date, bw.return_date,\n" +
+                "case \n" +
+                "    when bw.return_date is null then\n" +
+                "        'Not returned'\n" +
+                "    when bw.return_date is not null and bw.due_date > bw.return_date then\n" +
+                "        'Returned'\n" +
+                "    when current_date > bw.due_date then\n" +
+                "        'overDue'\n" +
+                "end as status\n" +
                 "from borrwings bw\n" +
                 "join books b\n" +
                 "on b.ISBN = bw.book_id\n" +
@@ -34,7 +42,8 @@ public class BorrowHistoryController {
                         resultSet.getString("b.book_title"),
                         sqlIssuDate != null ? sqlIssuDate.toLocalDate() : null,
                         sqlDueDate != null ? sqlDueDate.toLocalDate() : null,
-                        sqlReturnDate != null ? sqlReturnDate.toLocalDate() : null
+                        sqlReturnDate != null ? sqlReturnDate.toLocalDate() : null,
+                        resultSet.getString("status")
 
 
                 );

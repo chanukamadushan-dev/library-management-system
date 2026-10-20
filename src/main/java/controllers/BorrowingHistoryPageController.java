@@ -47,6 +47,8 @@ public class BorrowingHistoryPageController {
         colmIssueDate.setCellValueFactory(new PropertyValueFactory<>("issueDate"));
         colmDueDate.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         colmReturnDate.setCellValueFactory(new PropertyValueFactory<>("returnDate"));
+        colmStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
 
         tblBorrowingHistory.setItems(borrowHistoryController.getData());
 

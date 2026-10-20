@@ -26,12 +26,13 @@ public class Issue {
         this.status = "Borrowed";
     }
 
-    public Issue(String memberId, String bookTitle, LocalDate issueDate, LocalDate dueDate, LocalDate returnDate) {
+    public Issue(String memberId, String bookTitle, LocalDate issueDate, LocalDate dueDate, LocalDate returnDate, String status) {
         this.memberId = memberId;
         this.bookTitle = bookTitle;
         this.issueDate = issueDate;
         this.dueDate = dueDate;
         this.returnDate = returnDate;
+        this.status = status;
     }
 
     public Issue(int borrowId, String bookTitle, String memberId, String memberName, LocalDate issueDate, LocalDate dueDate) {
