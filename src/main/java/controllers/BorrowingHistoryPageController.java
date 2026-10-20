@@ -1,12 +1,14 @@
-package controllers.book;
+package controllers;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import model.Issue;
 import model.IssueData;
+import scene.SceneManager;
 
 public class BorrowingHistoryPageController {
 
@@ -50,4 +52,8 @@ public class BorrowingHistoryPageController {
 
     }
 
+    public void btnBackToHomeOnAction(ActionEvent actionEvent) {
+
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
+    }
 }

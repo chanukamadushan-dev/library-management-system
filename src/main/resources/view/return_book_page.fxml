@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="560.0" prefWidth="743.0" style="-fx-background-color: #F2F2F2;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.book.RerturnBookPageController">
    <children>
-      <Label layoutX="24.0" layoutY="29.0" text="Return Book" textFill="#1d0d4e">
+      <Label layoutX="85.0" layoutY="31.0" text="Return Book" textFill="#1d0d4e">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
@@ -89,5 +89,11 @@
             </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="btnBackToHome" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnBackToHomeOnAction" prefHeight="30.0" prefWidth="43.0" style="-fx-background-color: #F2F2F2;" />
+      <ImageView fitHeight="50.0" fitWidth="30.0" layoutX="16.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/dashboard-img/backbtn-removebg-preview.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

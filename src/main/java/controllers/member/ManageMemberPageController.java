@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Members;
+import scene.SceneManager;
 
 public class ManageMemberPageController {
 
@@ -165,5 +166,10 @@ public class ManageMemberPageController {
         );
         tblMemberDetails.setItems(memberController.getAllMembers());
         clearField();
+    }
+
+    public void btnBackToHomeOnAction(ActionEvent actionEvent) {
+
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
     }
 }

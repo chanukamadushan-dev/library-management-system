@@ -3,8 +3,13 @@ package model;
 import java.time.LocalDate;
 
 public class Issue {
+    private int borrowId;
+    private String memberId;
+    private String bookTitle;
+    private String memberName;
     private Members member;
     private Books book;
+    private String bookId;
 
     private LocalDate issueDate;
     private LocalDate dueDate;
@@ -12,12 +17,6 @@ public class Issue {
 
     private String status;
 
-//    public Issue(ManageMembers member, AddBooks book, LocalDate issueDate, LocalDate dueDate) {
-//        this.member = member;
-//        this.book = book;
-//        this.issueDate = issueDate;
-//        this.dueDate = dueDate;
-//    }
 
     public Issue(Members member, Books book, LocalDate issueDate, LocalDate dueDate) {
         this.member = member;
@@ -25,6 +24,22 @@ public class Issue {
         this.issueDate = issueDate;
         this.dueDate = dueDate;
         this.status = "Borrowed";
+    }
+
+
+
+    public Issue(int borrowId, String bookTitle, String memberId, String memberName, LocalDate issueDate, LocalDate dueDate) {
+        this.borrowId = borrowId;
+        this.bookTitle = bookTitle;
+        this.memberId = memberId;
+        this.memberName = memberName;
+        this.issueDate = issueDate;
+        this.dueDate = dueDate;
+    }
+
+    public Issue(int borrowId, String bookId) {
+        this.borrowId = borrowId;
+        this.bookId = bookId;
     }
 
     public Members getMember() {
@@ -51,6 +66,22 @@ public class Issue {
         return status;
     }
 
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public int getBorrowId() {
+        return borrowId;
+    }
+
     public void setMember(Members member) {
         this.member = member;
     }
@@ -75,8 +106,12 @@ public class Issue {
         this.returnDate = returnDate;
     }
 
+    public void setBorrowId(int borrowId) {
+        this.borrowId = borrowId;
+    }
+
     @Override
     public String toString() {
-        return book.getIsbn()+" - "+book.getBookName();
+        return borrowId+" - "+bookTitle;
     }
 }

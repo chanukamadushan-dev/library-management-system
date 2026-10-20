@@ -2,15 +2,21 @@ package controllers.book;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import model.Issue;
-import model.IssueData;
+import scene.SceneManager;
 
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class RerturnBookPageController {
+public class RerturnBookPageController implements Initializable {
+
+    ReturnBookController controller = new ReturnBookController();
+
 
     @FXML
     private Button btnReturn;
@@ -38,23 +44,15 @@ public class RerturnBookPageController {
 
         Issue selectedIssue = cmbSearchbyBook.getValue();
 
-        if (selectedIssue == null) {
-            return;
-        }
-
+        int borrowId = selectedIssue.getBorrowId();
         LocalDate returnDate = LocalDate.now();
 
-        selectedIssue.setReturnDate(returnDate);
-
-        if (returnDate.isAfter(selectedIssue.getDueDate())) {
-            selectedIssue.setStatus("Overdue");
-        } else {
-            selectedIssue.setStatus("Returned");
-        }
-
-        cmbSearchbyBook.getItems().remove(selectedIssue);
-
+        controller.setDate(
+                borrowId,
+                returnDate
+        );
         clearFields();
+       cmbSearchbyBook.setItems(controller.getBorrowData());
     }
 
     @FXML
@@ -64,6 +62,7 @@ public class RerturnBookPageController {
 
     @FXML
     void cmbSearchbyBookOnAction(ActionEvent event) {
+
 
     }
 
@@ -77,40 +76,31 @@ public class RerturnBookPageController {
         lblDueDate.setText("");
     }
 
-    @FXML
-    public void initialize() {
-
-        for (Issue issue : IssueData.getIssueList()) {
-
-            if (issue.getStatus().equals("Borrowed")) {
-                cmbSearchbyBook.getItems().add(issue);
-            }
-        }
-    }
 
     @FXML
     private void selectBook() {
 
-        Issue selectedIssue = cmbSearchbyBook.getValue();
+        Issue selcetedIssue = cmbSearchbyBook.getValue();
 
-        if (selectedIssue != null) {
-
-            lblMemberID.setText(
-                    selectedIssue.getMember().getMemberId()
-            );
-
-            lblMemberName.setText(
-                    selectedIssue.getMember().getMemberName()
-            );
-
-            lblBorrowedDate.setText(
-                    selectedIssue.getIssueDate().toString()
-            );
-
-            lblDueDate.setText(
-                    selectedIssue.getDueDate().toString()
-            );
+        if (selcetedIssue == null) {
+            return;
         }
+        lblMemberID.setText(selcetedIssue.getMemberId());
+        lblMemberName.setText(selcetedIssue.getMemberName());
+        lblBorrowedDate.setText(String.valueOf(selcetedIssue.getIssueDate()));
+        lblDueDate.setText(String.valueOf((selcetedIssue.getDueDate())));
+
+
     }
 
+    public void btnBackToHomeOnAction(ActionEvent actionEvent) {
+
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        cmbSearchbyBook.setItems(controller.getBorrowData());
+    }
 }

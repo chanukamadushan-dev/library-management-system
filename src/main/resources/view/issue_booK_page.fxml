@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="447.0" prefWidth="694.0" style="-fx-background-color: #FFF6DC;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.book.IssueBookPageController">
    <children>
-      <Label layoutX="26.0" layoutY="26.0" text="Issue Book" textFill="#353e79">
+      <Label layoutX="94.0" layoutY="40.0" text="Issue Book" textFill="#353e79">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -48,6 +48,12 @@
       <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="60.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/dashboard-img/borrowbooks.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBackToHome" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnBackToHomeOnAction" prefHeight="30.0" prefWidth="43.0" style="-fx-background-color: #FFF6DC;" />
+      <ImageView fitHeight="50.0" fitWidth="30.0" layoutX="16.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/dashboard-img/backbtn-removebg-preview.png" />
          </image>
       </ImageView>
    </children>

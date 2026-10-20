@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import model.*;
+import scene.SceneManager;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -66,6 +67,16 @@ public class IssueBookPageController implements Initializable {
                 dueDate
         );
 
+        clearField();
+
+    }
+
+    public void clearField(){
+
+        cmbSelectMember.setValue(null);
+        cmbSelectBook.setValue(null);
+        dpDueDate.setValue(null);
+        dpIssueDate.setValue(null);
     }
 
     @Override
@@ -73,5 +84,10 @@ public class IssueBookPageController implements Initializable {
 
         cmbSelectBook.setItems(controller.getBookIdName());
         cmbSelectMember.setItems(controller.getMembeIdAndName());
+    }
+
+    public void btnBackToHomeOnAction(ActionEvent actionEvent) {
+
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
     }
 }

@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Books;
+import scene.SceneManager;
 
 public class AddBookPageController {
 
@@ -152,4 +153,8 @@ public class AddBookPageController {
         txtQuantity.setText("");
     }
 
+    public void btnBackToHomeOnAction(ActionEvent actionEvent) {
+
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
+    }
 }
