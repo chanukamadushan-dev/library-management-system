@@ -1,14 +1,20 @@
-package controllers;
+package controllers.dashboard;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import scene.SceneManager;
 
-public class MainDashboardController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainDashboardPageController implements Initializable {
+
+    private final MainDashboardController dashboardController = new MainDashboardController();
 
     @FXML
     private Button btnAddBook;
@@ -102,4 +108,18 @@ public class MainDashboardController {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        int bookQty = dashboardController.getBookCount();
+        int memberQty = dashboardController.getMemberCount();
+        int borrowedBookCount = dashboardController.getBorrowedBookCount();
+        int overdueBookCount = dashboardController.getOverdueBookCount();
+
+        lblTotalBookCount.setText(String.valueOf(bookQty));
+        lblTotalMemberCount.setText(String.valueOf(memberQty));
+        lblBorrowedBookCount.setText(String.valueOf(borrowedBookCount));
+        lblOverDueCount.setText(String.valueOf(overdueBookCount));
+
+    }
 }

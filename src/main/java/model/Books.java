@@ -9,6 +9,7 @@ public class Books {
     private String quantity;
 
 
+    public Books(){}
     public Books(String isbn, String bookName, String author, String category, String year, String quantity) {
         this.isbn = isbn;
         this.bookName = bookName;
@@ -22,6 +23,7 @@ public class Books {
         this.isbn = isbn;
         this.bookName = bookName;
     }
+
 
     public String getIsbn() {
         return isbn;
@@ -43,9 +45,6 @@ public class Books {
         return year;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
 
     @Override
     public String toString() {
