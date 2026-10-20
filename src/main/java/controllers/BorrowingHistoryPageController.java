@@ -6,26 +6,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Issue;
 import model.IssueData;
 import scene.SceneManager;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class BorrowingHistoryPageController {
+
+    BorrowHistoryController borrowHistoryController = new BorrowHistoryController();
 
     @FXML
     private TableColumn<Issue, String> colmBookTitle;
 
     @FXML
-    private TableColumn<Issue, String > colmDueDate;
+    private TableColumn<Issue, LocalDate> colmDueDate;
 
     @FXML
-    private TableColumn<Issue, String > colmIssueDate;
+    private TableColumn<Issue, LocalDate > colmIssueDate;
 
     @FXML
     private TableColumn<Issue, String> colmMemberID;
 
     @FXML
-    private TableColumn<Issue, String> colmReturnDate;
+    private TableColumn<Issue, LocalDate> colmReturnDate;
 
     @FXML
     private TableColumn<Issue, String> colmStatus;
@@ -36,19 +42,13 @@ public class BorrowingHistoryPageController {
     @FXML
     public void initialize() {
 
-        tblBorrowingHistory.setItems(IssueData.getIssueList());
+        colmMemberID.setCellValueFactory(new PropertyValueFactory<>("memberId"));
+        colmBookTitle.setCellValueFactory(new PropertyValueFactory<>("bookTitle"));
+        colmIssueDate.setCellValueFactory(new PropertyValueFactory<>("issueDate"));
+        colmDueDate.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        colmReturnDate.setCellValueFactory(new PropertyValueFactory<>("returnDate"));
 
-        colmMemberID.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getMember().getMemberId()));
-
-        colmBookTitle.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBook().getBookName()));
-
-        colmIssueDate.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getIssueDate()).asString());
-
-        colmDueDate.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getDueDate()).asString());
-
-        colmReturnDate.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getReturnDate()).asString());
-
-        colmStatus.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getStatus()));
+        tblBorrowingHistory.setItems(borrowHistoryController.getData());
 
     }
 
