@@ -49,6 +49,13 @@ public class Issue {
         this.bookId = bookId;
     }
 
+    public Issue(String bookTitle, String memberName, LocalDate issueDate, LocalDate dueDate) {
+        this.bookTitle = bookTitle;
+        this.memberName = memberName;
+        this.issueDate = issueDate;
+        this.dueDate = dueDate;
+    }
+
     public Members getMember() {
         return member;
     }

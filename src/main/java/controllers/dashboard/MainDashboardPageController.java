@@ -7,9 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.Issue;
 import scene.SceneManager;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainDashboardPageController implements Initializable {
@@ -38,16 +42,16 @@ public class MainDashboardPageController implements Initializable {
     private Button btnSignIn;
 
     @FXML
-    private TableColumn<?, ?> colmBookName;
+    private TableColumn<Issue, String> colmBookName;
 
     @FXML
-    private TableColumn<?, ?> colmBorrowDt;
+    private TableColumn<Issue, LocalDate> colmBorrowDt;
 
     @FXML
-    private TableColumn<?, ?> colmCustomerName;
+    private TableColumn<Issue, String> colmCustomerName;
 
     @FXML
-    private TableColumn<?, ?> colmDueDt;
+    private TableColumn<Issue, LocalDate> colmDueDt;
 
     @FXML
     private Label lblBorrowedBookCount;
@@ -62,7 +66,7 @@ public class MainDashboardPageController implements Initializable {
     private Label lblTotalMemberCount;
 
     @FXML
-    private TableView<?> tblDashboard;
+    private TableView<Issue> tblDashboard;
 
 
 
@@ -120,6 +124,13 @@ public class MainDashboardPageController implements Initializable {
         lblTotalMemberCount.setText(String.valueOf(memberQty));
         lblBorrowedBookCount.setText(String.valueOf(borrowedBookCount));
         lblOverDueCount.setText(String.valueOf(overdueBookCount));
+
+        colmBookName.setCellValueFactory(new PropertyValueFactory<>("bookTitle"));
+        colmCustomerName.setCellValueFactory(new PropertyValueFactory<>("memberName"));
+        colmBorrowDt.setCellValueFactory(new PropertyValueFactory<>("issueDate"));
+        colmDueDt.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+
+        tblDashboard.setItems(dashboardController.getTableData());
 
     }
 }
