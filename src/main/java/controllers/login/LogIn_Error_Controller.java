@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import scene.SceneManager;
 
 import java.io.IOException;
 
@@ -12,7 +13,6 @@ public class LogIn_Error_Controller {
     public Button btnRetry;
 
     public void btnRtryOnAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) btnRetry.getScene().getWindow();
-        stage.close();
+        SceneManager.switchPgae("/view/main_dashboard.fxml");
     }
 }

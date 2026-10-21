@@ -18,7 +18,7 @@
       </Label>
       <AnchorPane layoutX="24.0" layoutY="95.0" prefHeight="398.0" prefWidth="816.0" style="-fx-background-color: #F2E6D8;">
          <children>
-            <TableView fx:id="tblBorrowingHistory" layoutX="32.0" layoutY="23.0" prefHeight="358.0" prefWidth="750.0">
+            <TableView fx:id="tblBorrowingHistory" layoutX="32.0" layoutY="23.0" prefHeight="358.0" prefWidth="750.0" styleClass="data-table" stylesheets="@../css/button-style.css">
               <columns>
                 <TableColumn fx:id="colmMemberID" prefWidth="104.80002212524414" text="Member ID" />
                 <TableColumn fx:id="colmBookTitle" prefWidth="145.59999084472656" text="Book Title" />

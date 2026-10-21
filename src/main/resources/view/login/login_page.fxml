@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="377.0" prefWidth="636.0" style="-fx-background-color: #a8d5e2;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.login.Login_Page_Controller">
    <children>
-      <Button fx:id="btnLogIn" layoutX="40.0" layoutY="281.0" mnemonicParsing="false" onAction="#btnLogInOnAction" prefHeight="26.0" prefWidth="230.0" style="-fx-background-color: #14213d;" text="log in" textFill="#f7f1f1">
+      <Button fx:id="btnLogIn" layoutX="40.0" layoutY="281.0" mnemonicParsing="false" onAction="#btnLogInOnAction" prefHeight="26.0" prefWidth="230.0" styleClass="login-page-button" stylesheets="@../../css/button-style.css" text="log in" textFill="#f7f1f1">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

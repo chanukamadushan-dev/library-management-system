@@ -47,12 +47,12 @@
       <TextField fx:id="txtMemberMail" layoutX="166.0" layoutY="277.0" onAction="#txtMemberMailOnAction" prefHeight="26.0" prefWidth="255.0" />
       <TextField fx:id="txtMemberPhone" layoutX="166.0" layoutY="335.0" onAction="#txtMemberPhoneOnAction" prefHeight="26.0" prefWidth="255.0" />
       <TextField fx:id="txtMemberAddress" layoutX="166.0" layoutY="396.0" onAction="#txtMemberAddressOnAction" prefHeight="26.0" prefWidth="255.0" />
-      <Button fx:id="btnMemberRegister" layoutX="189.0" layoutY="468.0" mnemonicParsing="false" onAction="#btnMemberRegisterOnAction" prefHeight="26.0" prefWidth="194.0" style="-fx-background-color: #123F36;" text="Register" textFill="WHITE">
+      <Button fx:id="btnMemberRegister" layoutX="189.0" layoutY="468.0" mnemonicParsing="false" onAction="#btnMemberRegisterOnAction" prefHeight="26.0" prefWidth="194.0" styleClass="add-member-button" stylesheets="@../css/button-style.css" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TableView fx:id="tblMemberDetails" layoutX="578.0" layoutY="213.0" prefHeight="200.0" prefWidth="594.0">
+      <TableView fx:id="tblMemberDetails" layoutX="578.0" layoutY="213.0" prefHeight="200.0" prefWidth="594.0" styleClass="data-table" stylesheets="@../css/button-style.css">
         <columns>
           <TableColumn fx:id="colmMemberId" prefWidth="75.0" text="Member ID" />
           <TableColumn fx:id="colmMemberName" prefWidth="151.20001220703125" text="Member Name" />
@@ -61,17 +61,17 @@
             <TableColumn fx:id="colmAddress" minWidth="0.0" prefWidth="119.99993896484375" text="Address" />
         </columns>
       </TableView>
-      <Button fx:id="btnUpdateMember" layoutX="899.0" layoutY="468.0" mnemonicParsing="false" onAction="#btnUpdateMemberOnAction" prefHeight="27.0" prefWidth="98.0" style="-fx-background-color: #2A7C13;" text="Update" textFill="WHITE">
+      <Button fx:id="btnUpdateMember" layoutX="899.0" layoutY="468.0" mnemonicParsing="false" onAction="#btnUpdateMemberOnAction" prefHeight="27.0" prefWidth="98.0" styleClass="update-member-button" stylesheets="@../css/button-style.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteMember" layoutX="1041.0" layoutY="469.0" mnemonicParsing="false" onAction="#btnDeleteMemberOnAction" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #D90000;" text="Delete" textFill="WHITE">
+      <Button fx:id="btnDeleteMember" layoutX="1041.0" layoutY="469.0" mnemonicParsing="false" onAction="#btnDeleteMemberOnAction" prefHeight="26.0" prefWidth="98.0" styleClass="delete-member-button" stylesheets="@../css/button-style.css" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnSearchMember" layoutX="768.0" layoutY="154.0" mnemonicParsing="false" onAction="#btnSearchMemberOnAction" style="-fx-background-color: #FFCF00;" text="Search" textFill="#fafafa">
+      <Button fx:id="btnSearchMember" layoutX="768.0" layoutY="154.0" mnemonicParsing="false" onAction="#btnSearchMemberOnAction" styleClass="search-member-button" stylesheets="@../css/button-style.css" text="Search" textFill="#fafafa">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

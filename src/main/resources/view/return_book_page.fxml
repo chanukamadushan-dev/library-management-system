@@ -15,7 +15,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnSearch" layoutX="344.0" layoutY="136.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #011142;" text="Search" textFill="WHITE">
+      <Button fx:id="btnSearch" layoutX="344.0" layoutY="136.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="68.0" styleClass="return-book-button" stylesheets="@../css/button-style.css" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -75,24 +75,20 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="532.0" layoutY="501.0" prefHeight="32.0" prefWidth="177.0" style="-fx-background-color: #011142;">
-         <children>
-            <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/dashboard-img/returnbooks.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="btnReturn" layoutX="40.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnReturnOnAction" prefHeight="27.0" prefWidth="109.0" style="-fx-background-color: #011142;" text="Return Book" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
       <Button fx:id="btnBackToHome" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnBackToHomeOnAction" prefHeight="30.0" prefWidth="43.0" style="-fx-background-color: #F2F2F2;" />
       <ImageView fitHeight="50.0" fitWidth="30.0" layoutX="16.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/dashboard-img/backbtn-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnReturn" layoutX="524.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnReturnOnAction" prefHeight="32.0" prefWidth="187.0" styleClass="return-book-button" stylesheets="@../css/button-style.css" text="Return Book" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="536.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/dashboard-img/returnbooks.png" />
          </image>
       </ImageView>
    </children>
