@@ -1,0 +1,44 @@
+.issue-book-button {
+    -fx-background-color: #247BA0;
+}
+
+.issue-book-button:hover {
+    -fx-background-color: #2D8FB8;
+    -fx-border-color: #8AE0FF;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(36, 123, 160, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+.cancel-book-button {
+    -fx-background-color: #eb5e28;
+}
+
+.cancel-book-button:hover {
+    -fx-background-color: #eb5e28;
+    -fx-border-color: #8AE0FF;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(36, 123, 160, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+
+.add-book-button {
+    -fx-background-color: #386641;
+}
+
+.add-book-button:hover {
+    -fx-background-color: #386641;
+    -fx-border-color: #8AE0FF;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(36, 123, 160, 0.35),
+            18, 0.40, 0, 0
+    );
+}
+
+

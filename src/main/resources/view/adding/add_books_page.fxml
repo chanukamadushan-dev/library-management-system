@@ -53,12 +53,12 @@
       <TextField fx:id="txtCategory" layoutX="163.0" layoutY="297.0" onAction="#txtCategoryOnAction" prefHeight="26.0" prefWidth="240.0" />
       <TextField fx:id="txtYear" layoutX="163.0" layoutY="353.0" onAction="#txtYearOnAction" prefHeight="26.0" prefWidth="240.0" />
       <TextField fx:id="txtQuantity" layoutX="163.0" layoutY="413.0" onAction="#txtQuantityOnAction" prefHeight="26.0" prefWidth="30.0" />
-      <Button fx:id="btnBookAdd" layoutX="34.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnBookAdOnAction" prefHeight="26.0" prefWidth="85.0" style="-fx-background-color: #386641;" text="ADD" textFill="WHITE">
+      <Button fx:id="btnBookAdd" layoutX="34.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnBookAdOnAction" prefHeight="26.0" prefWidth="85.0" styleClass="add-book-button" stylesheets="@../../css/button-style.css" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnCancel" layoutX="326.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="26.0" prefWidth="85.0" style="-fx-background-color: #eb5e28;" text="Cancel" textFill="WHITE">
+      <Button fx:id="btnCancel" layoutX="326.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnCancelOnAction" prefHeight="26.0" prefWidth="85.0" styleClass="cancel-book-button" stylesheets="@../../css/button-style.css" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

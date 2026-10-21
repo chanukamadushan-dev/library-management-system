@@ -40,7 +40,7 @@
       <DatePicker fx:id="dpDueDate" layoutX="369.0" layoutY="264.0" prefHeight="27.0" prefWidth="262.0" />
       <ComboBox fx:id="cmbSelectMember" layoutX="48.0" layoutY="158.0" onAction="#cmbSelectMemberOnAction" prefHeight="26.0" prefWidth="254.0" />
       <ComboBox fx:id="cmbSelectBook" layoutX="365.0" layoutY="158.0" onAction="#cmbSelectBookOnAction" prefHeight="26.0" prefWidth="254.0" />
-      <Button fx:id="btnIssueBook" layoutX="48.0" layoutY="352.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="38.0" prefWidth="174.0" styleClass="issue-book-button" stylesheets="@../css/issu_page.css" text="Issue Book" textFill="WHITE">
+      <Button fx:id="btnIssueBook" layoutX="48.0" layoutY="352.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="38.0" prefWidth="174.0" styleClass="issue-book-button" stylesheets="@../css/button-style.css" text="Issue Book" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
