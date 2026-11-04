@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -39,7 +40,10 @@ public class Login_Page_Controller {
     @FXML
     void btnLogInOnAction(ActionEvent event) {
         if (logInController.checkUserNameAndPasswor(txtUserName.getText(),txtPassword.getText())) {
+            new Alert(Alert.AlertType.INFORMATION,"Login Successfully").show();
+
             SceneManager.switchPgae("/view/main_dashboard.fxml");
+
         }else {
             SceneManager.switchPgae("/view/login/login_error.fxml");
             System.out.println("Login faild");

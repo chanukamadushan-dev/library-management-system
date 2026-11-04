@@ -2,13 +2,12 @@ package controllers.member;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Members;
 import scene.SceneManager;
+
+import java.util.Locale;
 
 public class ManageMemberPageController {
 
@@ -156,7 +155,54 @@ public class ManageMemberPageController {
         clearField();
     }
 
+    public void showError(String message){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+
+        alert.setTitle("Validation error");
+        alert.setHeaderText("Invalid member details");
+        alert.setContentText(message);
+
+        alert.showAndWait();
+    }
+
     public void btnMemberRegisterOnAction(ActionEvent actionEvent) {
+
+        String id = txtMemberID.getText().trim();
+        String name = txtMemberName.getText().trim();
+        String email = txtMemberMail.getText().trim();
+        String number = txtMemberPhone.getText().trim();
+        String address = txtMemberAddress.getText().trim();
+
+        if (id.isEmpty() || name.isEmpty() || email.isEmpty() || number.isEmpty() ||  address.isEmpty()){
+            showError("Please fill all fields !");
+            return;
+        }
+
+        if (memberController.searchMember(id) != null){
+
+            showError("This id already exists");
+            txtMemberID.requestFocus();
+            return;
+        }
+
+        if (!name.matches("[\\p{L} ]+")) {
+            showError("Name can contain letters only");
+            txtMemberName.requestFocus();
+            return;
+        }
+
+        if (!number.matches("\\+?[0-9]+")) {
+            showError("The phone number cannot contain letters");
+            txtMemberPhone.requestFocus();
+            return;
+        }
+
+        if (number.length() > 15) {
+            showError("Phone number cannot exceed 20 characters");
+
+            return;
+        }
         memberController.addMember(
                 txtMemberID.getText(),
                 txtMemberName.getText(),
