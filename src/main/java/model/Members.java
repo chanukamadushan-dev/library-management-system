@@ -53,7 +53,12 @@ public class Members {
     }
 
     public void setMemberPhone(String memberPhone) {
-        this.memberPhone = memberPhone;
+
+        if (memberPhone == null || memberPhone.length() <= 10) {
+            this.memberPhone = memberPhone;
+        } else {
+            throw new IllegalArgumentException("Phone number cannot exceed 20 characters.");
+        }
     }
 
     public void setMemberAddress(String memberAddress) {
@@ -62,6 +67,6 @@ public class Members {
 
     @Override
     public String toString() {
-        return  memberId+" - "+memberName ;
+        return memberId + " - " + memberName;
     }
 }
