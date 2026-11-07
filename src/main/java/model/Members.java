@@ -1,72 +1,72 @@
 package model;
 
 public class Members {
-    private String memberId;
-    private String memberName;
-    private String memberEmail;
-    private String memberPhone;
-    private String memberAddress;
+    private String id;
+    private String name;
+    private String email;
+    private String phone;
+    private String address;
 
-    public Members(String memberId, String memebrName, String memberEmail, String memberPhone, String memberAddress) {
-        this.memberId = memberId;
-        this.memberName = memebrName;
-        this.memberEmail = memberEmail;
-        this.memberPhone = memberPhone;
-        this.memberAddress = memberAddress;
+    public Members(String id, String name, String email, String phone, String address) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
     }
 
-    public Members(String memberId, String memberName) {
-        this.memberId = memberId;
-        this.memberName = memberName;
+    public Members(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public String getMemberId() {
-        return memberId;
+        return id;
     }
 
     public String getMemberName() {
-        return memberName;
+        return name;
     }
 
     public String getMemberEmail() {
-        return memberEmail;
+        return email;
     }
 
     public String getMemberPhone() {
-        return memberPhone;
+        return phone;
     }
 
     public String getMemberAddress() {
-        return memberAddress;
+        return address;
     }
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
+    public void setMemberId(String id) {
+        this.id = id;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setMemberName(String name) {
+        this.name = name;
     }
 
-    public void setMemberEmail(String memberEmail) {
-        this.memberEmail = memberEmail;
+    public void setMemberEmail(String email) {
+        this.email = email;
     }
 
-    public void setMemberPhone(String memberPhone) {
+    public void setMemberPhone(String phone) {
 
-        if (memberPhone == null || memberPhone.length() <= 10) {
-            this.memberPhone = memberPhone;
+        if (phone == null || phone.length() <= 10) {
+            this.phone = phone;
         } else {
             throw new IllegalArgumentException("Phone number cannot exceed 20 characters.");
         }
     }
 
-    public void setMemberAddress(String memberAddress) {
-        this.memberAddress = memberAddress;
+    public void setMemberAddress(String address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return memberId + " - " + memberName;
+        return id + " - " + name;
     }
 }
