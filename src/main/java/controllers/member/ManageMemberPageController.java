@@ -7,7 +7,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Members;
 import scene.SceneManager;
 
-import java.util.Locale;
 
 public class ManageMemberPageController {
 

@@ -5,17 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Books;
 
-import java.sql.Connection;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class AddBookController {
 
     private static AddBookController instance;
 
     private AddBookController(){}
+
 
     Connection connection = DBConnection.getInstance().getConnection();
 
